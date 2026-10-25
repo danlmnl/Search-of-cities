@@ -315,7 +315,7 @@ def update_stats():
     hidden = len(hidden_citties)
     million = sum(1 for p in data.values() if p>=1000000)
     small = sum(1 for p in data.values() if p<20000)
-    other = total-million-small-hidden
+    other = sum(1 for p in data.values() if 20000 <= p < 1000000)
 
     text=f"Всего городов: {total}\nСкрытых городов: {hidden}\nМиллионники: {million}\nМенее 20000: {small}\nДругие: {other}"
     status_text.config(state="normal")

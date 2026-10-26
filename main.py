@@ -8,8 +8,6 @@ root = Tk()
 root.title("Численность населения")
 root.geometry("700x500")
 
-
-
 auth_file = "auth.json"
 hidden_citties = set()
 
@@ -47,7 +45,7 @@ def save_data():
         json.dump(load, f, ensure_ascii=False, indent=2)
 
 def load_data():
-    if not(os.path.exists(data_file)):
+    if not os.path.exists(data_file):
         return
     try:
         with open(data_file, "r", encoding='utf-8') as f:
